@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envie seu Feedback</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial;
+        }
+
+		body {
+			padding-top: 80px; 
+		}
+
+        .top-bar {
+            background-color: #36d90d; 
+            height: 80px; 
+            width: 100%; 
+            position: fixed; 
+            top: 0; 
+            z-index: 0; 
+			text: Envie seu Feedback
+        }
+
+		.content {
+			margin-top: 60px; 
+			padding: 20px; 
+		}
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-top: 60px; 
+        }
+
+        main {
+            text-align: center;
+        }
+
+       
+        form {
+            width: 80%; 
+            max-width: 600px; 
+            background-color: #DCDCDC; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #36d90d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFFFFF; 
+			color: #36d90d
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar"></div> 
+
+    <div class="wrapper">
+        <h1></h1>
+        <form action="#" method="POST">
+            <label for="nome_anuncio">Nome (completo):</label>
+            <input type="text" id="nome_anuncio" name="nome_anuncio" required><br>
+			
+			<label for="data_compra">Idade:</label>
+            <input type="date" id="data_compra" name="data_compra"><br>
+           
+		   <label for="preco">E-mail:</label>
+            <input type="text" id="preco" name="preco" onkeyup="formatarMoeda(R$)" required><br>
+
+            <label for="descricao">Feedback (Comentário):</label><br>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br>   
+			
+			 <label for="rating">Avaliação:</label>
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 estrelas">&#9733;&#9733;&#9733;&#9733;&#9734;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 estrelas">&#9733;&#9733;&#9733;&#9734;&#9734;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 estrelas">&#9733;&#9733;&#9734;&#9734;&#9734;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 estrela">&#9733;&#9734;&#9734;&#9734;&#9734;</label>
+            </div><br>
+			
+            <label for="opcionais"></label><br>
+            <input type="checkbox" id="ar_condicionado" name="opcionais" value="ar_condicionado">
+            <label for="ar_condicionado">Aceito receber comunicações da GreenEcoDrive - Consultoria ESG e Carbono Zero.</label><br>
+            
+            <input type="checkbox" id="vidro_eletrico" name="opcionais" value="vidro_eletrico">
+            <label for="vidro_eletrico">Estou de acordo com as <b><u>Políticas de Privcacidade</u></b> deste website</label><br>
+
+            <input type="checkbox" id="direcao_hidraulica" name="opcionais" value="direcao_hidraulica">
+            <label for="direcao_hidraulica">Não usar suas informaões de contato para envio de spam </label><br>
+			
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
